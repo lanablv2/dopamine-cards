@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="40" fill="#C45D3A"/>
+  <rect x="40" y="28" width="112" height="136" rx="12" fill="#FFFDF8"/>
+  <rect x="40" y="28" width="112" height="36" rx="12" fill="#C45D3A"/>
+  <rect x="40" y="52" width="112" height="12" fill="#C45D3A"/>
+  <path d="M96 80 C96 72 84 60 74 68 C64 76 74 92 96 108 C118 92 128 76 118 68 C108 60 96 72 96 80Z" fill="#C45D3A" opacity="0.8"/>
+  <text x="96" y="140" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="#2A1A10">DOPAMINE</text>
+</svg>

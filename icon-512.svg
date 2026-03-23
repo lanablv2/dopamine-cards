@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#C45D3A"/>
+  <rect x="120" y="72" width="272" height="368" rx="24" fill="#FFFDF8"/>
+  <rect x="120" y="72" width="272" height="80" rx="24" fill="#C45D3A"/>
+  <rect x="120" y="128" width="272" height="24" fill="#C45D3A"/>
+  <path d="M256 200 C256 180 228 152 208 164 C188 176 208 208 256 240 C304 208 324 176 304 164 C284 152 256 180 256 200Z" fill="#C45D3A" opacity="0.8"/>
+  <text x="256" y="340" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="36" fill="#2A1A10">DOPAMINE</text>
+  <text x="256" y="380" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="36" fill="#2A1A10">MENU</text>
+</svg>

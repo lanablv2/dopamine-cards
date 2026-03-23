@@ -1,0 +1,24 @@
+{
+  "name": "Dopamine Menu for Moms",
+  "short_name": "Dopamine Menu",
+  "description": "A self-care card deck for moms — draw a card, get a dopamine boost.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF0E6",
+  "theme_color": "#C45D3A",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

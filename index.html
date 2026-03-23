@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Dopamine Menu">
+<meta name="theme-color" content="#C45D3A">
+<title>Dopamine Menu for Moms</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FBF0E6;
+  --card-body: #FFFDF8;
+  --text: #2A1A10;
+  --text-muted: #4A3628;
+  --text-faint: #8A7A6A;
+  --border: #E8D5C0;
+  --cat-appetizers: #C45D3A;
+  --cat-entrees: #6B4F3A;
+  --cat-sides: #4A8C5E;
+  --cat-desserts: #C4606A;
+  --cat-specials: #4A8EB0;
+  --cat-wild: #9A6AD4;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+}
+
+/* ═══════════════════════════════════════════
+   LANDING SCREEN
+   ═══════════════════════════════════════════ */
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 24px 32px;
+  text-align: center;
+  gap: 0;
+}
+
+.landing.hidden { display: none; }
+
+/* Decorative top accent */
+.top-accent {
+  width: 40px;
+  height: 4px;
+  background: var(--cat-appetizers);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.logo-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* Weekly counter */
+.weekly-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196, 93, 58, 0.08);
+  border: 1px solid rgba(196, 93, 58, 0.15);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--cat-appetizers);
+  margin-bottom: 28px;
+}
+
+.weekly-counter .count {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Draw button */
+.draw-btn {
+  background: var(--cat-appetizers);
+  color: #fff;
+  border: none;
+  padding: 18px 56px;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+  box-shadow: 0 4px 20px rgba(196, 93, 58, 0.3);
+  margin-bottom: 32px;
+}
+
+.draw-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(196, 93, 58, 0.4);
+}
+
+.draw-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 12px rgba(196, 93, 58, 0.3);
+}
+
+/* Pulse animation on draw button */
+.draw-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.2);
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  70% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+/* Category filter chips */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  max-width: 360px;
+}
+
+.chip {
+  padding: 7px 16px;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 180ms var(--ease-out), opacity 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+  color: #fff;
+}
+
+.chip:active { transform: scale(0.95); }
+
+.chip.all { background: var(--text); }
+.chip.appetizers { background: var(--cat-appetizers); }
+.chip.entrees { background: var(--cat-entrees); }
+.chip.sides { background: var(--cat-sides); }
+.chip.desserts { background: var(--cat-desserts); }
+.chip.specials { background: var(--cat-specials); }
+.chip.wild { background: var(--cat-wild); }
+
+.chip.active {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  transform: scale(1.05);
+}
+
+.chip:not(.active) {
+  opacity: 0.5;
+}
+
+/* No-Swap Rule toggle */
+.no-swap-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-track {
+  width: 44px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 12px;
+  position: relative;
+  transition: background 200ms var(--ease-out);
+  flex-shrink: 0;
+}
+
+.toggle-track.on { background: var(--cat-appetizers); }
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 200ms var(--ease-out);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.toggle-track.on .toggle-thumb { transform: translateX(20px); }
+
+/* Quote */
+.quote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-faint);
+  max-width: 280px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Install prompt */
+.install-hint {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  opacity: 0.5;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════
+   CARD SCREEN
+   ═══════════════════════════════════════════ */
+.card-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 24px 32px;
+  text-align: center;
+}
+
+.card-screen.visible {
+  display: flex;
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top, 16px));
+  left: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 180ms var(--ease-out);
+  z-index: 10;
+}
+
+.back-btn:active { background: rgba(0,0,0,0.05); }
+
+/* Card wrapper for 3D flip */
+.card-wrapper {
+  perspective: 1200px;
+  width: 280px;
+  height: 400px;
+  margin-bottom: 28px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Card Back */
+.card-back {
+  background: var(--cat-appetizers);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-back-inner {
+  position: absolute;
+  inset: 10px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back-pattern {
+  position: absolute;
+  inset: 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+/* Diamond pattern using repeating SVG */
+.card-back-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2 L16 12 L12 22 L8 12Z' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  background-size: 24px 24px;
+}
+
+.card-back-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.15em;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card-back-sub {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.12em;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card-back-formoms {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(255,224,208,0.9);
+  z-index: 1;
+  margin-top: 4px;
+}
+
+.card-back-line {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,224,208,0.5);
+  z-index: 1;
+  margin: 6px 0;
+}
+
+/* Card Front */
+.card-front {
+  transform: rotateY(180deg);
+  background: var(--card-body);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid rgba(232,213,192,0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 18px 20px 14px;
+  color: #fff;
+  text-align: center;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 2px;
+}
+
+.card-cat-subtitle {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 28px;
+}
+
+.card-activity {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+  white-space: pre-line;
+}
+
+.card-footer {
+  padding: 12px 20px 16px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+/* Category header colors */
+.card-header.appetizers { background: var(--cat-appetizers); }
+.card-header.entrees { background: var(--cat-entrees); }
+.card-header.sides { background: var(--cat-sides); }
+.card-header.desserts { background: var(--cat-desserts); }
+.card-header.specials { background: var(--cat-specials); }
+.card-header.wild { background: var(--cat-wild); }
+
+/* Card entrance animation */
+.card-wrapper.entering {
+  animation: card-enter 0.5s var(--ease-out) forwards;
+}
+
+@keyframes card-enter {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════
+   ACTION BUTTONS
+   ═══════════════════════════════════════════ */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--ease-out) 0.5s, transform 0.4s var(--ease-out) 0.5s;
+}
+
+.actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-btn {
+  padding: 14px 32px;
+  border-radius: 100px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.did-it-btn {
+  background: var(--cat-sides);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(74, 140, 94, 0.3);
+}
+
+.skip-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--border);
+}
+
+.skip-btn.hidden { display: none; }
+
+/* Swipe hint */
+.swipe-hint {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out) 0.7s;
+}
+
+.swipe-hint.visible { opacity: 0.6; }
+
+/* ═══════════════════════════════════════════
+   CELEBRATIONS
+   ═══════════════════════════════════════════ */
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.celebration-overlay.active {
+  display: flex;
+}
+
+.celebration-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cat-appetizers);
+  animation: celebrate-pop 1.5s var(--ease-out) forwards;
+  text-align: center;
+  line-height: 1.3;
+}
+
+@keyframes celebrate-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  20% { transform: scale(1.2); opacity: 1; }
+  40% { transform: scale(1); }
+  100% { opacity: 0; transform: scale(1) translateY(-20px); }
+}
+
+/* Confetti particles */
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  z-index: 101;
+  pointer-events: none;
+  animation: confetti-fall 1.5s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (min-width: 500px) {
+  .card-wrapper {
+    width: 320px;
+    height: 440px;
+  }
+  .card-activity { font-size: 1.45rem; }
+  .title { font-size: 2.6rem; }
+}
+
+@media (max-height: 700px) {
+  .landing { padding: 24px 24px 20px; }
+  .card-wrapper { height: 360px; }
+  .weekly-counter { margin-bottom: 20px; }
+  .draw-btn { margin-bottom: 24px; padding: 14px 44px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     LANDING SCREEN
+     ═══════════════════════════════════════════ -->
+<div class="landing" id="landing">
+  <div class="top-accent"></div>
+
+  <!-- Logo SVG -->
+  <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Dopamine Menu logo">
+    <rect x="8" y="4" width="40" height="48" rx="6" fill="var(--card-body)" stroke="var(--border)" stroke-width="1.5"/>
+    <rect x="8" y="4" width="40" height="14" rx="6" fill="var(--cat-appetizers)"/>
+    <rect x="8" y="12" width="40" height="6" fill="var(--cat-appetizers)"/>
+    <path d="M28 24 C28 21 23 17 20 20 C17 23 23 28 28 33 C33 28 39 23 36 20 C33 17 28 21 28 24Z" fill="var(--cat-appetizers)" opacity="0.7"/>
+  </svg>
+
+  <h1 class="title">DOPAMINE MENU</h1>
+  <p class="subtitle">for moms</p>
+
+  <div class="weekly-counter">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v7l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/></svg>
+    <span><span class="count" id="weeklyCount">0</span> cards this week</span>
+  </div>
+
+  <button class="draw-btn" id="drawBtn" onclick="drawCard()">DRAW A CARD</button>
+
+  <div class="filter-chips" id="filterChips">
+    <button class="chip all active" data-cat="ALL" onclick="setFilter('ALL', this)">All</button>
+    <button class="chip appetizers" data-cat="APPETIZERS" onclick="setFilter('APPETIZERS', this)">Appetizers</button>
+    <button class="chip entrees" data-cat="ENTREES" onclick="setFilter('ENTREES', this)">Entrées</button>
+    <button class="chip sides" data-cat="SIDES" onclick="setFilter('SIDES', this)">Sides</button>
+    <button class="chip desserts" data-cat="DESSERTS" onclick="setFilter('DESSERTS', this)">Desserts</button>
+    <button class="chip specials" data-cat="SPECIALS" onclick="setFilter('SPECIALS', this)">Specials</button>
+    <button class="chip wild" data-cat="WILD" onclick="setFilter('WILD', this)">Wild</button>
+  </div>
+
+  <label class="no-swap-toggle" onclick="toggleNoSwap()">
+    <div class="toggle-track" id="noSwapTrack">
+      <div class="toggle-thumb"></div>
+    </div>
+    <span>NO SWAP RULE</span>
+  </label>
+
+  <p class="quote">"You can't pour from an empty cup."</p>
+
+  <p class="install-hint" id="installHint">Add to Home Screen for the full experience</p>
+
+  <footer class="footer">
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CARD SCREEN
+     ═══════════════════════════════════════════ -->
+<div class="card-screen" id="cardScreen">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+
+  <div class="card-wrapper entering" id="cardWrapper">
+    <div class="card-inner" id="cardInner">
+      <!-- Back face -->
+      <div class="card-face card-back">
+        <div class="card-back-inner">
+          <div class="card-back-pattern"></div>
+          <div class="card-back-line"></div>
+          <span class="card-back-title">DOPAMINE</span>
+          <span class="card-back-sub">MENU</span>
+          <span class="card-back-formoms">for moms</span>
+          <div class="card-back-line"></div>
+        </div>
+      </div>
+      <!-- Front face -->
+      <div class="card-face card-front" id="cardFront">
+        <div class="card-header" id="cardHeader">
+          <div class="card-category" id="cardCategory">APPETIZERS</div>
+          <div class="card-cat-subtitle" id="cardCatSubtitle">2-5 min quick reset</div>
+        </div>
+        <div class="card-body">
+          <div class="card-activity" id="cardActivity">Make your favorite<br>hot drink</div>
+        </div>
+        <div class="card-footer" id="cardNumber">Card 1 of 20</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions" id="actions">
+    <button class="action-btn did-it-btn" onclick="didIt()">DID IT!</button>
+    <button class="action-btn skip-btn" id="skipBtn" onclick="skip()">SKIP</button>
+  </div>
+
+  <div class="swipe-hint" id="swipeHint">← swipe left to skip · swipe right to complete →</div>
+</div>
+
+<!-- Celebration overlay -->
+<div class="celebration-overlay" id="celebrationOverlay">
+  <div class="celebration-text" id="celebrationText"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════
+   CARD DATA — 90 cards
+   ═══════════════════════════════════════════ */
+const CATEGORIES = {
+  APPETIZERS: { color: '#C45D3A', subtitle: '2–5 min quick reset', icon: '☕', cls: 'appetizers' },
+  ENTREES:    { color: '#6B4F3A', subtitle: '30+ min deep recharge', icon: '✨', cls: 'entrees' },
+  SIDES:      { color: '#4A8C5E', subtitle: 'Pair with a chore', icon: '♫', cls: 'sides' },
+  DESSERTS:   { color: '#C4606A', subtitle: 'Guilty-free pleasure', icon: '♥', cls: 'desserts' },
+  SPECIALS:   { color: '#4A8EB0', subtitle: 'Plan ahead & savor', icon: '☆', cls: 'specials' },
+  WILD:       { color: '#9A6AD4', subtitle: 'Surprise yourself!', icon: '✳', cls: 'wild' }
+};
+
+const CARDS = {
+  APPETIZERS: [
+    "Make your favorite\nhot drink",
+    "Step outside alone\nfor 2 minutes",
+    "Listen to ONE\nfavorite song",
+    "5-minute stretch\nin the doorway",
+    "Look at your kids'\nbaby photos",
+    "Eat a snack you\nactually enjoy",
+    "Splash cold water\non your face",
+    "Smell something\nlovely (candle, lotion)",
+    "Do 10 jumping jacks\nright now",
+    "Text a friend\nsomething funny",
+    "Hug someone\nfor 20 seconds",
+    "Stand in the sun\nfor 3 minutes",
+    "Put on your\nfavorite lipstick",
+    "Drink a full glass\nof cold water",
+    "Take 5 deep breaths\n(4-7-8 pattern)",
+    "Doodle something\nfor 2 minutes",
+    "Dance to one song\nin the kitchen",
+    "Write down ONE\nthing you're proud of",
+    "Pet the cat/dog\nfor 2 minutes",
+    "Tidy ONE small\nsurface"
+  ],
+  ENTREES: [
+    "Take a solo walk\n(even 15 min counts)",
+    "Read a chapter\nof your book",
+    "Take a long\nshower or bath",
+    "Call a friend\nwithout kids around",
+    "Cook something\njust for YOU",
+    "Yoga or workout\nsession",
+    "Watch one episode\nof your show",
+    "Journal for\n15 minutes",
+    "Bake something\ndelicious",
+    "Go to a cafe\nby yourself",
+    "Take a nap while\nkids nap too",
+    "Do a face mask\n& relax",
+    "Garden or repot\na plant",
+    "Organize a drawer\nyou've been avoiding",
+    "Try a new recipe\njust for fun",
+    "Draw, paint or\ndo a craft",
+    "Meditate for\n15-20 minutes",
+    "Drive somewhere\nscenic alone",
+    "Browse a bookshop\nwith no agenda",
+    "Rearrange a room\nor a shelf"
+  ],
+  SIDES: [
+    "Podcast while\nfolding laundry",
+    "Music while\ncooking dinner",
+    "Audiobook during\nthe school run",
+    "Candle lit while\nworking",
+    "Body doubling\nwith a friend",
+    "Dance while\ncleaning up",
+    "FaceTime a friend\nwhile tidying",
+    "Favorite playlist\nduring dishes",
+    "YouTube video while\nironing",
+    "Comedy special\nwhile meal-prepping",
+    "Sing out loud\nwhile vacuuming",
+    "Listen to a TED talk\nwhile organizing",
+    "Scented candle\nwhile doing admin",
+    "Voice-note a friend\nwhile walking the dog",
+    "New album while\ngrocery shopping"
+  ],
+  DESSERTS: [
+    "Scroll Pinterest\nor Instagram",
+    "Online window\nshopping",
+    "Watch a comfort\nshow (1 episode!)",
+    "Binge a guilty-\npleasure podcast",
+    "Eat something\nsweet, slowly",
+    "Watch satisfying\nvideos on TikTok",
+    "Read celebrity\ngossip guilt-free",
+    "Play a phone game\nfor 15 min",
+    "Browse Etsy for\nfun (not buying!)",
+    "Re-watch your\nfavorite movie scene",
+    "Online quiz:\n\"What type of..?\"",
+    "Scroll real estate\nlistings (dream!)",
+    "Watch makeup\ntutorials",
+    "Browse travel\ndestinations",
+    "Read fan fiction\nor romance novel"
+  ],
+  SPECIALS: [
+    "Book a spa day\nor massage",
+    "Solo date: cafe,\nbookshop, walk",
+    "Plan a girls'\nnight out",
+    "Take a day trip\nsomewhere new",
+    "Book a hotel night\njust for you",
+    "Sign up for\na class or workshop",
+    "Get a new haircut\nor color",
+    "Buy yourself flowers\n(you deserve it)",
+    "Full at-home spa\nevening",
+    "Plan a future\nvacation (for real)"
+  ],
+  WILD: [
+    "Ask someone else\nto pick for you!",
+    "Do the OPPOSITE\nof what you'd usually do",
+    "Combine any 2 cards\nfrom different categories",
+    "Close your eyes,\nfan out the deck,\npick one blind",
+    "Do this card's\nactivity with\nyour partner",
+    "Timer: 5 minutes\nof doing NOTHING",
+    "Call your mom\n(or someone who\nfeels like mom)",
+    "Write a love note\nto yourself",
+    "Do a random act\nof kindness today",
+    "Put on a full outfit\nlike you're going OUT"
+  ]
+};
+
+/* ═══════════════════════════════════════════
+   STATE (in-memory, resets on reload)
+   ═══════════════════════════════════════════ */
+let weeklyCount = 0;
+let activeFilter = 'ALL';
+let noSwapMode = false;
+let currentCard = null;
+let isFlipping = false;
+let touchStartX = 0;
+let touchStartY = 0;
+
+// Build flat card deck
+function buildDeck(filter) {
+  const deck = [];
+  const categories = filter === 'ALL' ? Object.keys(CARDS) : [filter];
+  categories.forEach(cat => {
+    CARDS[cat].forEach((text, i) => {
+      deck.push({
+        category: cat,
+        text: text,
+        index: i + 1,
+        total: CARDS[cat].length
+      });
+    });
+  });
+  return deck;
+}
+
+function getRandomCard() {
+  const deck = buildDeck(activeFilter);
+  return deck[Math.floor(Math.random() * deck.length)];
+}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+function drawCard() {
+  currentCard = getRandomCard();
+  showCardScreen(currentCard);
+}
+
+function showCardScreen(card) {
+  const landing = document.getElementById('landing');
+  const screen = document.getElementById('cardScreen');
+  const cardInner = document.getElementById('cardInner');
+  const wrapper = document.getElementById('cardWrapper');
+  const actions = document.getElementById('actions');
+  const swipeHint = document.getElementById('swipeHint');
+
+  // Update card content
+  const cat = CATEGORIES[card.category];
+  document.getElementById('cardHeader').className = 'card-header ' + cat.cls;
+  document.getElementById('cardCategory').textContent = card.category;
+  document.getElementById('cardCatSubtitle').textContent = cat.subtitle;
+  document.getElementById('cardActivity').innerHTML = card.text.replace(/\n/g, '<br>');
+  document.getElementById('cardNumber').textContent = `Card ${card.index} of ${card.total}`;
+
+  // Update skip button visibility
+  document.getElementById('skipBtn').classList.toggle('hidden', noSwapMode);
+
+  // Show card screen
+  landing.classList.add('hidden');
+  screen.classList.add('visible');
+
+  // Reset card to back
+  cardInner.classList.remove('flipped');
+  actions.classList.remove('visible');
+  swipeHint.classList.remove('visible');
+
+  // Entrance animation
+  wrapper.classList.remove('entering');
+  void wrapper.offsetWidth; // force reflow
+  wrapper.classList.add('entering');
+
+  // Flip after a small delay
+  isFlipping = true;
+  setTimeout(() => {
+    cardInner.classList.add('flipped');
+    setTimeout(() => {
+      actions.classList.add('visible');
+      swipeHint.classList.add('visible');
+      isFlipping = false;
+    }, 400);
+  }, 300);
+}
+
+function goBack() {
+  const landing = document.getElementById('landing');
+  const screen = document.getElementById('cardScreen');
+  landing.classList.remove('hidden');
+  screen.classList.remove('visible');
+  updateWeeklyDisplay();
+}
+
+/* ═══════════════════════════════════════════
+   ACTIONS
+   ═══════════════════════════════════════════ */
+function didIt() {
+  if (isFlipping) return;
+  weeklyCount++;
+  updateWeeklyDisplay();
+  checkMilestone(weeklyCount);
+  drawNextCard();
+}
+
+function skip() {
+  if (isFlipping || noSwapMode) return;
+  drawNextCard();
+}
+
+function drawNextCard() {
+  const cardInner = document.getElementById('cardInner');
+  const actions = document.getElementById('actions');
+  const swipeHint = document.getElementById('swipeHint');
+  const wrapper = document.getElementById('cardWrapper');
+
+  // Quick hide
+  actions.classList.remove('visible');
+  swipeHint.classList.remove('visible');
+
+  // Animate out then in
+  wrapper.style.transition = 'transform 0.3s var(--ease-in), opacity 0.3s var(--ease-in)';
+  wrapper.style.transform = 'scale(0.9)';
+  wrapper.style.opacity = '0';
+
+  setTimeout(() => {
+    currentCard = getRandomCard();
+    const cat = CATEGORIES[currentCard.category];
+    document.getElementById('cardHeader').className = 'card-header ' + cat.cls;
+    document.getElementById('cardCategory').textContent = currentCard.category;
+    document.getElementById('cardCatSubtitle').textContent = cat.subtitle;
+    document.getElementById('cardActivity').innerHTML = currentCard.text.replace(/\n/g, '<br>');
+    document.getElementById('cardNumber').textContent = `Card ${currentCard.index} of ${currentCard.total}`;
+    document.getElementById('skipBtn').classList.toggle('hidden', noSwapMode);
+
+    // Reset to back
+    cardInner.classList.remove('flipped');
+
+    // Pop in
+    wrapper.style.transition = 'transform 0.5s var(--ease-out), opacity 0.4s var(--ease-out)';
+    wrapper.style.transform = 'scale(1)';
+    wrapper.style.opacity = '1';
+
+    // Flip to front
+    isFlipping = true;
+    setTimeout(() => {
+      cardInner.classList.add('flipped');
+      setTimeout(() => {
+        actions.classList.add('visible');
+        swipeHint.classList.add('visible');
+        isFlipping = false;
+      }, 400);
+    }, 200);
+  }, 300);
+}
+
+/* ═══════════════════════════════════════════
+   FILTER & TOGGLE
+   ═══════════════════════════════════════════ */
+function setFilter(cat, el) {
+  activeFilter = cat;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function toggleNoSwap() {
+  noSwapMode = !noSwapMode;
+  document.getElementById('noSwapTrack').classList.toggle('on', noSwapMode);
+}
+
+/* ═══════════════════════════════════════════
+   WEEKLY COUNTER
+   ═══════════════════════════════════════════ */
+function updateWeeklyDisplay() {
+  const el = document.getElementById('weeklyCount');
+  el.textContent = weeklyCount;
+  // Small pop animation
+  el.style.transition = 'none';
+  el.style.transform = 'scale(1.4)';
+  void el.offsetWidth;
+  el.style.transition = 'transform 0.3s var(--ease-out)';
+  el.style.transform = 'scale(1)';
+}
+
+/* ═══════════════════════════════════════════
+   CELEBRATIONS
+   ═══════════════════════════════════════════ */
+const MILESTONES = { 5: "5 cards!\nYou're on fire 🔥", 10: "10 cards!\nSelf-care queen 👑", 20: "20 cards!\nUnstoppable! 💪" };
+
+function checkMilestone(count) {
+  if (MILESTONES[count]) {
+    showCelebration(MILESTONES[count]);
+  }
+}
+
+function showCelebration(text) {
+  const overlay = document.getElementById('celebrationOverlay');
+  const textEl = document.getElementById('celebrationText');
+  textEl.innerHTML = text.replace(/\n/g, '<br>');
+  overlay.classList.add('active');
+
+  // Spawn confetti
+  spawnConfetti();
+
+  // Re-trigger animation
+  textEl.style.animation = 'none';
+  void textEl.offsetWidth;
+  textEl.style.animation = '';
+
+  setTimeout(() => {
+    overlay.classList.remove('active');
+  }, 1800);
+}
+
+function spawnConfetti() {
+  const colors = ['#C45D3A', '#4A8C5E', '#C4606A', '#4A8EB0', '#9A6AD4', '#6B4F3A', '#E8A87C', '#FFD6BA'];
+  for (let i = 0; i < 30; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.top = '-10px';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.width = (Math.random() * 8 + 4) + 'px';
+    el.style.height = (Math.random() * 8 + 4) + 'px';
+    el.style.animationDuration = (Math.random() * 1 + 1) + 's';
+    el.style.animationDelay = (Math.random() * 0.3) + 's';
+    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 2500);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SWIPE GESTURES
+   ═══════════════════════════════════════════ */
+document.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  if (!document.getElementById('cardScreen').classList.contains('visible')) return;
+  if (isFlipping) return;
+
+  const deltaX = e.changedTouches[0].clientX - touchStartX;
+  const deltaY = e.changedTouches[0].clientY - touchStartY;
+
+  // Only register horizontal swipes (more horizontal than vertical)
+  if (Math.abs(deltaX) > 60 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+    if (deltaX > 0) {
+      // Swipe right = did it
+      didIt();
+    } else {
+      // Swipe left = skip
+      skip();
+    }
+  }
+}, { passive: true });
+
+/* ═══════════════════════════════════════════
+   PWA SERVICE WORKER
+   ═══════════════════════════════════════════ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// Hide install hint if already in standalone mode
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+  document.getElementById('installHint').style.display = 'none';
+}
+</script>
+</body>
+</html>
