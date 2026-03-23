@@ -1,8 +1,8 @@
 {
   "name": "Dopamine Menu for Moms",
   "short_name": "Dopamine Menu",
-  "description": "A self-care card deck for moms — draw a card, get a dopamine boost.",
-  "start_url": "/index.html",
+  "description": "A self-care card deck for moms \u2014 draw a card, get a dopamine boost.",
+  "start_url": "/dopamine-cards/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FFF8F0",
@@ -20,5 +20,7 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "scope": "/dopamine-cards/",
+  "id": "dopamine-cards"
 }

@@ -1126,7 +1126,7 @@ document.addEventListener('touchend', e => {
    PWA SERVICE WORKER
    ═══════════════════════════════════════════ */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('sw.js', {scope: '/dopamine-cards/'}).catch(() => {});
 }
 
 // Hide install hint if already in standalone mode
