@@ -23,7 +23,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Dopamine Menu">
-<meta name="theme-color" content="#C45D3A">
+<meta name="theme-color" content="#FF6B35">
 <title>Dopamine Menu for Moms</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.svg" type="image/svg+xml">
@@ -39,18 +39,24 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #FBF0E6;
-  --card-body: #FFFDF8;
-  --text: #2A1A10;
-  --text-muted: #4A3628;
-  --text-faint: #8A7A6A;
-  --border: #E8D5C0;
-  --cat-appetizers: #C45D3A;
-  --cat-entrees: #6B4F3A;
-  --cat-sides: #4A8C5E;
-  --cat-desserts: #C4606A;
-  --cat-specials: #4A8EB0;
-  --cat-wild: #9A6AD4;
+  --bg: #FFF8F0;
+  --card-body: #FFFFFF;
+  --text: #1A1A2E;
+  --text-muted: #4A4A5A;
+  --text-faint: #8A8A9A;
+  --border: #F0E0D0;
+  --cat-appetizers: #FF6B35;
+  --cat-entrees: #3B5BA5;
+  --cat-sides: #00B875;
+  --cat-desserts: #E84393;
+  --cat-specials: #F9A825;
+  --cat-wild: #7C4DFF;
+  --cat-appetizers-bg: #FFF0E8;
+  --cat-entrees-bg: #EBF0FA;
+  --cat-sides-bg: #E5F8F0;
+  --cat-desserts-bg: #FDE8F3;
+  --cat-specials-bg: #FFF8E1;
+  --cat-wild-bg: #F0EAFF;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -128,8 +134,8 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(196, 93, 58, 0.08);
-  border: 1px solid rgba(196, 93, 58, 0.15);
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.15);
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 0.875rem;
@@ -158,18 +164,18 @@ body {
   position: relative;
   overflow: hidden;
   transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
-  box-shadow: 0 4px 20px rgba(196, 93, 58, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
   margin-bottom: 32px;
 }
 
 .draw-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(196, 93, 58, 0.4);
+  box-shadow: 0 6px 28px rgba(255, 107, 53, 0.4);
 }
 
 .draw-btn:active {
   transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 12px rgba(196, 93, 58, 0.3);
+  box-shadow: 0 2px 12px rgba(255, 107, 53, 0.3);
 }
 
 /* Pulse animation on draw button */
@@ -546,7 +552,7 @@ body {
 .did-it-btn {
   background: var(--cat-sides);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(74, 140, 94, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 184, 117, 0.3);
 }
 
 .skip-btn {
@@ -747,116 +753,116 @@ body {
    CARD DATA — 90 cards
    ═══════════════════════════════════════════ */
 const CATEGORIES = {
-  APPETIZERS: { color: '#C45D3A', subtitle: '2–5 min quick reset', icon: '☕', cls: 'appetizers' },
-  ENTREES:    { color: '#6B4F3A', subtitle: '30+ min deep recharge', icon: '✨', cls: 'entrees' },
-  SIDES:      { color: '#4A8C5E', subtitle: 'Pair with a chore', icon: '♫', cls: 'sides' },
-  DESSERTS:   { color: '#C4606A', subtitle: 'Guilty-free pleasure', icon: '♥', cls: 'desserts' },
-  SPECIALS:   { color: '#4A8EB0', subtitle: 'Plan ahead & savor', icon: '☆', cls: 'specials' },
-  WILD:       { color: '#9A6AD4', subtitle: 'Surprise yourself!', icon: '✳', cls: 'wild' }
+  APPETIZERS: { color: '#FF6B35', bg: '#FFF0E8', subtitle: '2-5 min quick boost', icon: '☕', cls: 'appetizers' },
+  ENTREES:    { color: '#3B5BA5', bg: '#EBF0FA', subtitle: '30+ min deep recharge', icon: '✨', cls: 'entrees' },
+  SIDES:      { color: '#00B875', bg: '#E5F8F0', subtitle: 'Make boring stuff fun', icon: '♫', cls: 'sides' },
+  DESSERTS:   { color: '#E84393', bg: '#FDE8F3', subtitle: 'Zero-guilt pleasure', icon: '♥', cls: 'desserts' },
+  SPECIALS:   { color: '#F9A825', bg: '#FFF8E1', subtitle: 'You earned this \u2014 plan it', icon: '☆', cls: 'specials' },
+  WILD:       { color: '#7C4DFF', bg: '#F0EAFF', subtitle: 'Surprise yourself!', icon: '✳', cls: 'wild' }
 };
 
 const CARDS = {
   APPETIZERS: [
-    "Make your favorite\nhot drink",
-    "Step outside alone\nfor 2 minutes",
-    "Listen to ONE\nfavorite song",
-    "5-minute stretch\nin the doorway",
-    "Look at your kids'\nbaby photos",
-    "Eat a snack you\nactually enjoy",
-    "Splash cold water\non your face",
-    "Smell something\nlovely (candle, lotion)",
-    "Do 10 jumping jacks\nright now",
-    "Text a friend\nsomething funny",
-    "Hug someone\nfor 20 seconds",
-    "Stand in the sun\nfor 3 minutes",
-    "Put on your\nfavorite lipstick",
-    "Drink a full glass\nof cold water",
-    "Take 5 deep breaths\n(4-7-8 pattern)",
-    "Doodle something\nfor 2 minutes",
-    "Dance to one song\nin the kitchen",
-    "Write down ONE\nthing you're proud of",
-    "Pet the cat/dog\nfor 2 minutes",
-    "Tidy ONE small\nsurface"
+    "Make yourself a hot drink.\nSit down. Sip slowly.\nNo multitasking.",
+    "Step outside for 2 minutes.\nFeel the air on your face.\nThat's it. Just breathe.",
+    "Play ONE song you love.\nTurn it up.\nDance if you want to.",
+    "Stretch your whole body\nfor 5 minutes.\nYour shoulders need this.",
+    "Open your phone and look\nat your kids' baby photos.\nSmile. You made that.",
+    "Grab a snack you love.\nEat it slowly.\nActually taste it this time.",
+    "Splash cold water\non your face.\nInstant reset.",
+    "Light a candle or put on\nyour favorite lotion.\nSmell something beautiful.",
+    "Do 10 jumping jacks\nright where you're standing.\nBlood flowing = mood boost.",
+    "Text someone funny.\nA meme, a memory, anything.\nMake them laugh today.",
+    "Hug someone for 20 seconds.\nKid, friend, pet \u2014 anyone.\n20 seconds. Count them.",
+    "Stand in the sun\nfor 3 minutes.\nClose your eyes. Soak it in.",
+    "Put on lipstick or perfume.\nNot for anyone else.\nJust for you.",
+    "Drink a full glass\nof ice cold water.\nYour brain is thirsty.",
+    "Breathe: in for 4, hold 7,\nout for 8. Do it 3 times.\nCalm unlocked.",
+    "Doodle something silly\nfor 2 minutes.\nNo rules. No judgment.",
+    "Put on a song and\ndance in the kitchen.\nNobody's watching.",
+    "Write down ONE thing\nyou're proud of today.\nYou did more than you think.",
+    "Pet your cat or dog\nfor 2 solid minutes.\nThey need it. You need it.",
+    "Pick ONE small surface\nand tidy it. Just one.\n2-minute win."
   ],
   ENTREES: [
-    "Take a solo walk\n(even 15 min counts)",
-    "Read a chapter\nof your book",
-    "Take a long\nshower or bath",
-    "Call a friend\nwithout kids around",
-    "Cook something\njust for YOU",
-    "Yoga or workout\nsession",
-    "Watch one episode\nof your show",
-    "Journal for\n15 minutes",
-    "Bake something\ndelicious",
-    "Go to a cafe\nby yourself",
-    "Take a nap while\nkids nap too",
-    "Do a face mask\n& relax",
-    "Garden or repot\na plant",
-    "Organize a drawer\nyou've been avoiding",
-    "Try a new recipe\njust for fun",
-    "Draw, paint or\ndo a craft",
-    "Meditate for\n15-20 minutes",
-    "Drive somewhere\nscenic alone",
-    "Browse a bookshop\nwith no agenda",
-    "Rearrange a room\nor a shelf"
+    "Go for a solo walk.\nEven 15 minutes counts.\nLeave your phone behind.",
+    "Read a chapter of\na book you've been meaning\nto pick up. Just one.",
+    "Take a long, hot shower.\nOr a bath if you can.\nYou deserve the warm water.",
+    "Call a friend.\nNot to vent about kids.\nJust to laugh together.",
+    "Cook something just for YOU.\nNot for the family.\nYour favorite thing.",
+    "Do a yoga session\nor any workout you enjoy.\n20 minutes minimum.",
+    "Watch ONE episode of\nyour comfort show.\nGuilt-free. You earned it.",
+    "Journal for 15 minutes.\nWrite anything \u2014 feelings,\nlists, dreams, complaints.",
+    "Bake something delicious.\nThe whole house will\nsmell amazing.",
+    "Go to a cafe alone.\nOrder something fancy.\nSit and do nothing.",
+    "Take a nap.\nSet a 30-min timer.\nClose your eyes. Let go.",
+    "Do a face mask.\nLay down while it works.\nYou are the spa now.",
+    "Garden or repot a plant.\nDig in the dirt.\nIt's weirdly healing.",
+    "Organize that one drawer\nthat's been bugging you.\nSo satisfying.",
+    "Try a brand new recipe\njust for fun.\nNot meal prep. Just play.",
+    "Draw, paint, or do a craft.\nIt doesn't have to be good.\nJust make something.",
+    "Meditate for 15 minutes.\nUse an app or just sit\nin silence. Either works.",
+    "Drive somewhere scenic\nby yourself. Windows down.\nMusic up.",
+    "Browse a bookshop\nwith zero agenda.\nTouch the books. Read covers.",
+    "Rearrange a shelf or corner\nof your room. Fresh eyes\non an old space."
   ],
   SIDES: [
-    "Podcast while\nfolding laundry",
-    "Music while\ncooking dinner",
-    "Audiobook during\nthe school run",
-    "Candle lit while\nworking",
-    "Body doubling\nwith a friend",
-    "Dance while\ncleaning up",
-    "FaceTime a friend\nwhile tidying",
-    "Favorite playlist\nduring dishes",
-    "YouTube video while\nironing",
-    "Comedy special\nwhile meal-prepping",
-    "Sing out loud\nwhile vacuuming",
-    "Listen to a TED talk\nwhile organizing",
-    "Scented candle\nwhile doing admin",
-    "Voice-note a friend\nwhile walking the dog",
-    "New album while\ngrocery shopping"
+    "Put on a great podcast\nwhile folding laundry.\nMake the boring bearable.",
+    "Play your favorite playlist\nwhile cooking dinner.\nSing along. Loudly.",
+    "Listen to an audiobook\nduring the school run.\nYour story, your escape.",
+    "Light a candle while\nyou work on boring tasks.\nSmall luxury, big difference.",
+    "FaceTime a friend while\ncleaning up. Misery loves\ncompany (but fun).",
+    "Dance while you vacuum\nor mop the floors.\nChoreography optional.",
+    "Call someone you love\nwhile tidying the house.\nTwo birds, one phone.",
+    "Play a new album\nwhile grocery shopping.\nDiscover music in aisle 5.",
+    "Watch a YouTube video\nwhile ironing clothes.\nLearn something new.",
+    "Put on a comedy special\nwhile meal-prepping.\nLaugh your way through.",
+    "Sing out loud while\nvacuuming. Full performance.\nThe vacuum is your backup.",
+    "Listen to a TED talk\nwhile organizing a closet.\nGrow while you clean.",
+    "Try a new scented candle\nwhile doing admin work.\nBetter bills with vanilla.",
+    "Send voice notes to a friend\nwhile walking the dog.\nMultitasking, but fun.",
+    "Put on a true crime podcast\nwhile doing dishes.\nSuspense makes suds better."
   ],
   DESSERTS: [
-    "Scroll Pinterest\nor Instagram",
-    "Online window\nshopping",
-    "Watch a comfort\nshow (1 episode!)",
-    "Binge a guilty-\npleasure podcast",
-    "Eat something\nsweet, slowly",
-    "Watch satisfying\nvideos on TikTok",
-    "Read celebrity\ngossip guilt-free",
-    "Play a phone game\nfor 15 min",
-    "Browse Etsy for\nfun (not buying!)",
-    "Re-watch your\nfavorite movie scene",
-    "Online quiz:\n\"What type of..?\"",
-    "Scroll real estate\nlistings (dream!)",
-    "Watch makeup\ntutorials",
-    "Browse travel\ndestinations",
-    "Read fan fiction\nor romance novel"
+    "Scroll Pinterest for\n15 minutes. Pin anything\nthat makes you happy.",
+    "Window-shop online.\nAdd to cart. Don't buy.\nThe thrill is in the browse.",
+    "Watch ONE episode of\nyour guilty pleasure show.\nNo shame. Zero.",
+    "Listen to a podcast\nthat's pure entertainment.\nNo self-improvement today.",
+    "Eat something sweet.\nSlowly. Really taste it.\nThis is a moment.",
+    "Watch satisfying videos.\nSoap cutting, slime, organizing.\n10 minutes of zen.",
+    "Read celebrity gossip.\nYes, really. It's okay\nto care about nothing.",
+    "Play a phone game\nfor 15 minutes.\nCandy Crush counts as self-care.",
+    "Browse Etsy or Amazon\njust for fun.\nNot buying. Just dreaming.",
+    "Rewatch your favorite\nmovie scene. The one that\nalways makes you feel good.",
+    "Take a fun online quiz.\n\"What kind of bread are you?\"\nImportant research.",
+    "Scroll through real estate\nlistings in dream locations.\nYour fantasy house awaits.",
+    "Watch makeup or hair\ntutorials on YouTube.\nSatisfying even if you\nnever try them.",
+    "Browse travel destinations.\nPick one. Daydream about it\nfor 10 minutes.",
+    "Read a chapter of\na romance novel or fanfic.\nEscapism is valid."
   ],
   SPECIALS: [
-    "Book a spa day\nor massage",
-    "Solo date: cafe,\nbookshop, walk",
-    "Plan a girls'\nnight out",
-    "Take a day trip\nsomewhere new",
-    "Book a hotel night\njust for you",
-    "Sign up for\na class or workshop",
-    "Get a new haircut\nor color",
-    "Buy yourself flowers\n(you deserve it)",
-    "Full at-home spa\nevening",
-    "Plan a future\nvacation (for real)"
+    "Book a massage or spa day.\nPut it in your calendar.\nThis is non-negotiable.",
+    "Take yourself on a solo date.\nCafe, bookshop, park.\nJust you and you.",
+    "Plan a night out\nwith your favorite people.\nPut the date on the calendar.",
+    "Take a day trip\nsomewhere you've never been.\nNew place = new energy.",
+    "Book a hotel night\njust for yourself.\nRoom service and silence.",
+    "Sign up for a class\nor workshop you've always\nwanted to try.",
+    "Get a fresh haircut\nor try a new color.\nNew hair = new chapter.",
+    "Buy yourself flowers.\nNot groceries. Flowers.\nPut them where you'll see them.",
+    "Full at-home spa evening.\nMask, bath, music, candles.\nThe whole ritual.",
+    "Plan a real vacation.\nNot \"someday.\" Pick dates.\nYou need this."
   ],
   WILD: [
-    "Ask someone else\nto pick for you!",
-    "Do the OPPOSITE\nof what you'd usually do",
-    "Combine any 2 cards\nfrom different categories",
-    "Close your eyes,\nfan out the deck,\npick one blind",
-    "Do this card's\nactivity with\nyour partner",
-    "Timer: 5 minutes\nof doing NOTHING",
-    "Call your mom\n(or someone who\nfeels like mom)",
-    "Write a love note\nto yourself",
-    "Do a random act\nof kindness today",
-    "Put on a full outfit\nlike you're going OUT"
+    "Ask your kid or a friend\nto pick a card for you.\nTrust their choice!",
+    "Do the OPPOSITE\nof what you'd normally do.\nComfort zone? Not today.",
+    "Draw 2 more cards\nfrom different categories.\nDo both. Combo boost!",
+    "Close your eyes.\nFan out the deck.\nPoint and pick blind.",
+    "Share this card with\nsomeone you care about.\nDo the activity together.",
+    "Set a timer for 5 minutes.\nDo absolutely NOTHING.\nNot even your phone.",
+    "Call someone who\nmakes you feel safe.\nJust to say hi.",
+    "Write a love note\nto yourself. Yes, really.\nYou'd do it for a friend.",
+    "Do one random act\nof kindness today.\nBuy a stranger's coffee.",
+    "Put on a full outfit\nlike you're going OUT.\nEven if you're staying in."
   ]
 };
 
@@ -1075,7 +1081,7 @@ function showCelebration(text) {
 }
 
 function spawnConfetti() {
-  const colors = ['#C45D3A', '#4A8C5E', '#C4606A', '#4A8EB0', '#9A6AD4', '#6B4F3A', '#E8A87C', '#FFD6BA'];
+  const colors = ['#FF6B35', '#3B5BA5', '#00B875', '#E84393', '#F9A825', '#7C4DFF', '#FF9A76', '#FFD6BA'];
   for (let i = 0; i < 30; i++) {
     const el = document.createElement('div');
     el.className = 'confetti';
